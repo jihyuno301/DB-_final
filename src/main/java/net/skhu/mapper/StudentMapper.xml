@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.skhu.mapper.StudentMapper">
+
+
+	<insert id="insert" parameterType="Student">
+		INSERT INTO student(id, departmentName, name, sex, grade, tel, email,
+		password)
+		VALUES (#{id}, #{departmentName}, #{name}, #{sex}, #{grade}, #{tel},
+		#{email}, #{password})
+	</insert>
+	<select id="findById" resultType="Student">
+		SELECT * FROM student
+		WHERE id = #{id}
+	</select>
+	<update id="update">
+		UPDATE student SET
+			departmentName = #{departmentName},
+			name = #{name},
+			sex = #{sex},
+			grade = #{grade},
+			tel = #{tel},
+			email = #{email},
+			password = #{password}
+		WHERE id = #{id}
+	</update>
+
+</mapper>
+
+
+
+
+	
+	
